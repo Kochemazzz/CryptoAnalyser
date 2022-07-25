@@ -5,21 +5,28 @@ import java.nio.file.Path;
 import java.util.Scanner;
 public class FileOnBoard implements Command {
     private static Path pathInput;
-    public static String ReadLineString ;
+    public static String getReadLineString() {
+        return ReadLineString;
+    }
+    private static String ReadLineString;
     private static final Scanner scanner = new Scanner(System.in);
     @Override
     public void execute() throws IOException {
         while (true) {
-            System.out.println("Please, input path");
+            System.out.println("Пожалуйста введите путь к файлу");
+//            System.out.println("Если нужно выйте введите exit");
             String inputString = scanner.nextLine();
             Path newPath = Path.of(inputString);
             if (Files.exists(newPath)) {
-                System.out.println("File on board!");
+                System.out.println("Файл загружен!");
                 FileOnBoard.pathInput = newPath;
                 FileOnBoard.ReadLineString = String.valueOf(Files.readAllLines(FileOnBoard.pathInput));
                 break;
+//            } else if ("exit".equalsIgnoreCase(String.valueOf(newPath))) {
+//                System.out.println("Досвиданья!");
+//                break;
             } else {
-                System.out.println("Not file in local directory");
+                System.out.println("Файл не найден");
             }
         }
     }

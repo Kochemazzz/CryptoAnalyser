@@ -16,7 +16,7 @@ public class Runner {
         commandTwo.execute();
         CommandsFactory commandsFactoryThree = createCommandInline("3");
         Command commandThree = commandsFactoryThree.createCommands();
-        commandThree.execute(FileOnBoard.ReadLineString, Bias.getKEY());
+        commandThree.execute(FileOnBoard.getReadLineString(), Bias.getKEY());
 
     }
 

@@ -7,14 +7,14 @@ public class Bias implements Command{
     @Override
     public void execute() throws IOException {
         while (true) {
-            System.out.println("Please, input bias!");
+            System.out.println("Пожалуйста, введите сдвиг");
             System.out.println();
             KEY = scanner.nextInt();
             if (KEY > 0 && KEY < 33) {
-                System.out.println("bias add");
+                System.out.println("Сдвиг добавлен");
                 break;
             } else {
-                System.out.println("bias not supported");
+                System.out.println("Сдвиг задан не правильно!");
             }
         }
     }
